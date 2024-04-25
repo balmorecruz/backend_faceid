@@ -16,8 +16,10 @@ DB_PASSWORD=config_env["DB_PASSWORD"]
 DB_NAME=config_env["DB_NAME"]
 DB_PORT=config_env["DB_PORT"]
 
-URL = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
 
+
+URL = f'postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
+print(URL)
 engine = create_engine(URL)
 SessionLocal = sessionmaker(autocommit=False,autoflush=False,bind=engine)
 
